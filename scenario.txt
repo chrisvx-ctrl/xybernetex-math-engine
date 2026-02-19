@@ -1,0 +1,51 @@
+SCENARIO_NAME: Municipal Bridge Replacement — Cedar Falls
+
+SCENARIO_DESCRIPTION:
+Cedar Falls (pop. 340,000) has three aging bridges requiring significant intervention
+within 18 months. The city has secured $48M in federal infrastructure funding but full
+replacement of all three costs $71M. The city cannot issue new bonds — voter approval
+failed in November. One bridge must receive only a patch repair, deferring full
+replacement by 4-10 years depending on the structure.
+
+Bridge 1 — Commerce Viaduct: Carries 28,000 vehicles/day including the primary freight
+route for the industrial district. Structural rating: 4/10. Full replacement: $26M.
+Patch repair: $6M, buys 4-6 years. Catastrophic failure would cut off the industrial
+district entirely.
+
+Bridge 2 — Eastside Connector: Primary access for the city's lowest-income neighborhood
+(pop. 62,000). Structural rating: 5/10. Full replacement: $22M. Patch repair: $4M,
+buys 6-8 years. No alternative route — closure forces a 40-minute detour to downtown
+employment centers.
+
+Bridge 3 — Lakeside Pedestrian Bridge: Tourist and active transportation corridor.
+Structural rating: 6/10. Full replacement: $23M. Patch repair: $3M, buys 8-10 years.
+Vocal advocacy group has City Council support.
+
+City Engineer wants to replace Commerce Viaduct — highest structural risk, catastrophic
+failure potential. Mayor wants to protect Eastside Connector — election is 14 months
+away. Chamber of Commerce backs Commerce Viaduct. Equity coalition is threatening
+litigation if Eastside is deferred. Pedestrian bridge advocates control three Council votes.
+
+DIMENSIONS:
+- Structural Risk and Safety
+- Economic and Freight Impact
+- Equity and Community Access
+- Political and Legal Exposure
+- Federal Funding Compliance
+- Long-Term Cost and Deferral Risk
+
+PHASES:
+- PROBLEM_FRAMING
+- STAKEHOLDER_ANALYSIS
+- CONSTRAINT_MAPPING
+- RISK_ASSESSMENT
+- OPTIONS_EVALUATION
+- DECISION_RECOMMENDATION
+- EXECUTION_PLAN
+
+CONSTRAINTS:
+- Total budget is $48M and must be spent within 18 months or federal funding is forfeited
+- Exactly one bridge must receive patch repair only — the other two receive full replacement
+- All stakeholder groups (City Engineer, Mayor, Chamber, Equity Coalition, Council) must be addressed
+- Recommendation must include rationale for the deferred bridge and litigation risk assessment
+- Execution plan must address sequencing given the 18-month federal deadline
