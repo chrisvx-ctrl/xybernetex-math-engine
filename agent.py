@@ -35,7 +35,7 @@ from datetime import datetime
 from collections import Counter
 from openai import OpenAI
 
-from scenario_loader import parse_scenario_file, print_loaded_scenario
+from scenario_loader import parse_scenario_file, parse_freeform, print_loaded_scenario
 from mcts_engine import mcts_search, PERSONAS
 
 
@@ -328,16 +328,23 @@ def mutate_framework(framework: dict, verdict: str, pass_number: int) -> dict:
         "RERUN_DEEPEN": "TRACE",
     }
 
+    mode = framework.get("mode", "selection")
+
     directive_bodies = {
         "RERUN_TIGHTEN": (
-            f"Name exactly one candidate to cut. Non-committal recommendations are rejected."
+            "Name exactly one specific recommended path or option. Non-committal recommendations are rejected."
+            if mode == "generation" else
+            "Name exactly one candidate or option. Non-committal recommendations are rejected."
         ),
         "RERUN_DIVERSIFY": (
-            f"Surface and argue the non-obvious case. Consensus is insufficient."
+            "Surface and argue the non-obvious path. Consensus is insufficient."
         ),
         "RERUN_DEEPEN": (
-            f"Your recommendation must cite specific named risks and constraints from prior phases. "
-            f"General reasoning without citation is rejected."
+            "Your recommended path must cite specific named risks and constraints from prior phases. "
+            "General reasoning without citation is rejected."
+            if mode == "generation" else
+            "Your recommendation must cite specific named risks and constraints from prior phases. "
+            "General reasoning without citation is rejected."
         ),
     }
 
@@ -446,6 +453,7 @@ def run_agent(
     print(f"XYBERNETEX AUTONOMOUS AGENT")
     print(f"{'█'*70}")
     print(f"Scenario   : {framework['name']}")
+    print(f"Mode       : {framework.get('mode', 'unknown').upper()}")
     print(f"Max passes : {max_passes}  |  Sims/pass: {n_simulations}")
     print(f"Thresholds :")
     for k, v in THRESHOLDS.items():
@@ -652,6 +660,8 @@ def get_client() -> OpenAI:
 def main():
     parser = argparse.ArgumentParser(description="Xybernetex Autonomous Agent")
     parser.add_argument("--scenario",   default="scenario.txt")
+    parser.add_argument("--freeform",   default=None,
+                        help="Plain English problem description. Bypasses scenario.txt.")
     parser.add_argument("--max_passes", type=int, default=3)
     parser.add_argument("--sims",       type=int, default=25)
     parser.add_argument("--expand",     type=int, default=2)
@@ -666,8 +676,13 @@ def main():
             print(f"  {k}: {v}")
         sys.exit(0)
 
-    client   = get_client()
-    framework = parse_scenario_file(args.scenario)
+    client = get_client()
+
+    if args.freeform:
+        framework = parse_freeform(args.freeform)
+        print(f"[Freeform intake — mode inferred: {framework['mode'].upper()}]")
+    else:
+        framework = parse_scenario_file(args.scenario)
     print_loaded_scenario(framework)
 
     cost_per_pass = round(args.sims * 7 * 500 / 1000 * 0.002, 2)
