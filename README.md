@@ -1,6 +1,6 @@
-# Xybernetex Decision Engine
+# Xybernetex Decision Engine - Research Prototype
 
-Monte Carlo Tree Search over LLM reasoning paths. The math is in charge. The LLM does the work.
+Monte Carlo Tree Search over LLM reasoning paths. The math is in charge. The LLM does the work. Potential framework for agentic AI. Gives LLMs the ability, through decision theory and mathematics, to decide and reason, choosing the best path forward.
 
 ---
 
