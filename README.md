@@ -12,6 +12,8 @@ Requires a ChatGPT API key
 
 The LLM does not self-evaluate. The engine does.
 
+Link to the whitepaper: https://osf.io/dym3v
+
 ---
 
 ## Two Modes
