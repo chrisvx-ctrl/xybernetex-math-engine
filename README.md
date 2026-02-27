@@ -6,7 +6,9 @@ Monte Carlo Tree Search over LLM reasoning paths. The math is in charge. The LLM
 
 ## What It Does
 
-Takes any problem — a hard decision, a business plan, a research question — runs it through structured multi-phase reasoning across parallel simulations, scores every reasoning path against a formal reward function, and surfaces the most defensible recommendation with a full audit trail.
+Xybernetex is an innovative AI framework designed to enhance the reasoning capabilities of language models through a unique combination of Markov Decision Processes (MDP) and Monte Carlo Tree Search (MCTS). By integrating these advanced decision-making techniques, Xybernetex enables even smaller language models to think through options and make decisions, significantly improving their problem-solving abilities. This approach not only outperforms larger models like GPT-5.2 with more efficient, context-aware reasoning but also represents a crucial step toward achieving Artificial General Intelligence (AGI) and truly autonomous agents.
+
+Requires a ChatGPT API key
 
 The LLM does not self-evaluate. The engine does.
 
